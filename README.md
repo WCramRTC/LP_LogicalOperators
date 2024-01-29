@@ -1,4 +1,8 @@
 
+# Lecture Practice - Logical Operators
+
+## Introduction
+
 Logical operators are utilized alongside comparison operators to address questions that involve multiple conditions with both affirmative and negative requirements.
 
 **Logical Operators Table:**
@@ -80,14 +84,35 @@ else
 | false    | false         | false        | The user cannot enter the club.      |
 
 ---
-# Questions 1 - 7
+# Assignment
+
+- Create a new project called LP_LogicalOperations_YourName
+- Comment your name at the top of the assignment
+- Copy and paste the following questions from below, adding the required code and testing along the way.
+- Submit your project on Canvas with a GitHub repo.
+
+## Questions 1 - 7
 
 1. **Question 1: Checking if a Number is Even or Positive (Easier)**
 ### ***Question: Is a given number even AND positive?***
 
    Given an integer variable `num`, create bool variables `isEven` and `isPositive` to check if `num` is even and positive, respectively. Then, create a bool variable `isEvenAndPositive` that combines these conditions using a logical operator. Display the result.
 
-Here's a small table explaining how to check if a number is even and how to check if a number is positive in C#:
+   > Tip: You can compare numbers with >, <, >=, \<=, ==, and !=  
+   > Check the Required Logic table below for assistance
+
+   **Comparison Operators Table:**
+
+| Operator | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `==`     | Equal       | `5 == 5` | `true` |
+| `!=`     | Not Equal   | `5 != 3` | `true` |
+| `<`      | Less Than   | `3 < 5` | `true` |
+| `>`      | Greater Than| `5 > 3` | `true` |
+| `<=`     | Less Than or Equal | `3 <= 3` | `true` |
+| `>=`     | Greater Than or Equal | `5 >= 5` | `true` |
+
+### Copy and paste this code into the `main` in your `Program.cs`
 
    ```csharp
    int num = 6;
@@ -123,6 +148,9 @@ Test with these 3 numbers and compare your results
 
    You have a string variable `input` representing a user's role. Create bool variables `isAdmin` and `isModerator` to check if the user is an "admin" or a "moderator," respectively. Then, create a bool variable `isAuthorized` that checks if the user is authorized based on these conditions using a logical operator. Display the result.
 
+   > Tip: Here you are comparing strings, use ==
+
+   ### Copy and paste this code into the `main` in your `Program.cs`
    ```csharp
    string input = "moderator";
    // Requires Comparison Operator: Checking if input is "admin"
@@ -151,6 +179,12 @@ Test with these 3 numbers and compare your results
 
 **Question: Checking Voter Eligibility (Revised with Logical Operator)**
 Given an integer variable `age`, create a bool variable `isEligibleToVote` that checks if a person is eligible to vote by using a logical operator to ensure that the age is within a reasonable voting age range (between 18 and 100). Display the result.
+
+> Tip: Using \<= checks if a value is lesser than OR equal to. The same applies to >= for greater than or equal to.  
+> 10 > 10 - False  
+> 10 >= 10 - True
+
+### Copy and paste this code into the `main` in your `Program.cs`
 
 ```csharp
 int age = 21;
@@ -185,6 +219,8 @@ Console.WriteLine($"Is the person eligible to vote? {isEligibleToVote}");
 
    Given two boolean variables `isOnline` and `isLoggedIn`, create a bool variable `canAccess` that checks if the user can access a system based on both `isOnline` and `isLoggedIn` using a logical operator. Display the result.
 
+   ### Copy and paste this code into the `main` in your `Program.cs`
+
    ```csharp
    bool isOnline = true;
    bool isLoggedIn = true;
@@ -198,6 +234,8 @@ Console.WriteLine($"Is the person eligible to vote? {isEligibleToVote}");
 ### ***Question: Is players score equal to or greater than 1000 AND less than or equal to 5000"***
 
    Create bool variables `isHighScore` and `isLowScore` to check if `playerScore` is both greater than or equal to 1000 and less than or equal to 5000, respectively. Then, create a bool variable `isHighOrLowScore` that combines these conditions using a logical operator. Display the result.
+
+   ### Copy and paste this code into the `main` in your `Program.cs`
 
    ```csharp
    int playerScore = 1200;
@@ -226,6 +264,13 @@ Console.WriteLine($"Is the person eligible to vote? {isEligibleToVote}");
 ### ***Question: Has the user paid OR the trial has NOT expired"***
    
    Given bool variables `hasPaid` and `isTrialExpired`, create bool variables `canAccessWithPayment` and `canAccessWithTrial` to check if the user can access content based on having paid or not having the trial expired. Then, create a bool variable `canAccessContent` that combines these conditions using a logical operator. Display the result.
+
+   > Tip: You can invert any boolean with a !.  
+   > bool isRaining = true;  
+   > bool isNOTRaining = !isRaining; Flips true to false  
+
+
+   ### Copy and paste this code into the `main` in your `Program.cs`
 
    ```csharp
    bool hasPaid = false;
@@ -271,7 +316,24 @@ Imagine you're tasked with developing a sophisticated access control system for 
 - `hasBiometricScan`: Indicates whether the user has successfully provided a biometric scan (`true` if they have, `false` if they haven't).
 - `securityClearanceLevel`: This integer variable stores the security clearance level of the user, with a placeholder value of `4`. In practice, you'd replace this value with the actual security clearance level of the user.
 
+> Tip: We can use Parenthese for order of operations when working with booleans.
+
+`Code Examples, Don't Copy and Paste`
+```csharp
+    // Example 1: Using parentheses to control the order of operations
+    bool a = true;
+    bool b = false;
+    bool c = true;
+
+    bool result = (a && b) || c;
+    // Here, the '&&' operation is evaluated before '||' because of parentheses.
+    // (true && false) is false, so the result is true (true || true).
+    Console.WriteLine(result);  // Output: True
+```
+
 Here's the code snippet that implements this complex access control system:
+
+### Copy and paste this code into the `main` in your `Program.cs`
 
 ```csharp
 bool hasAccessCard = true;
@@ -304,3 +366,22 @@ Assuming `true` represents having the respective condition, and `false` represen
 | false           | true                | (e.g., 4)                | false      | false                | false                |
 | false           | false               | (e.g., 4)                | false      | false                | false                |
 
+---
+
+# Rubric
+
+| Criteria                               | Description                                 | Points |
+|----------------------------------------|---------------------------------------------|--------|
+| **Correctness**                        | Evaluate the accuracy of implemented logic and conditions. Ensure the code provides accurate results according to the specified conditions and requirements. | 30     |
+| **Code Structure and Organization**    | Assess the structure and organization of the code, including variable naming, logical flow, and proper indentation. | 15     |
+| **Testing and Output**                 | Evaluate the adequacy of testing with different inputs and the extent to which the output matches the expected results for various scenarios. | 15     |
+| **Comments and Documentation**         | Check for the presence of appropriate comments and documentation that explain the purpose of the code and how it works. | 10     |
+| **Project Naming and Submission**      | Verify that the project is named correctly as per the assignment instructions and that the assignment has been properly submitted on the specified platform (Canvas or GitHub). | 5      |
+| **Answering Question 1**               | Assess the accuracy and completeness of the answer to Question 1, which involves checking if a given number is even and positive. | 5      |
+| **Answering Question 2**               | Evaluate the accuracy and completeness of the answer to Question 2, which involves checking the user's role for "admin" or "moderator." | 5      |
+| **Answering Question 3**               | Assess the accuracy and completeness of the answer to Question 3, which involves checking voter eligibility based on age. | 5      |
+| **Answering Question 4**               | Evaluate the accuracy and completeness of the answer to Question 4, which involves checking the user's online status and login. | 5      |
+| **Answering Question 5**               | Assess the accuracy and completeness of the answer to Question 5, which involves checking the player's high score. | 5      |
+| **Answering Question 6**               | Evaluate the accuracy and completeness of the answer to Question 6, which involves checking subscription access control. | 5      |
+| **Answering Question 7**               | Assess the accuracy and completeness of the answer to Question 7, which involves implementing a complex access control system with multiple conditions. | 10     |
+| **Total Points**                       |                                           | 100    |
